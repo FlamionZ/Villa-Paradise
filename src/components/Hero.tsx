@@ -21,10 +21,10 @@ export default function Hero() {
         <h1 className="hero-title">Pengalaman Villa Mewah yang Tak Terlupakan</h1>
         <p className="hero-subtitle">Nikmati kemewahan dan kenyamanan di villa eksklusif kami dengan pemandangan yang menakjubkan</p>
         <div className="hero-buttons">
-          <button onClick={() => scrollToSection('rooms')} className="btn btn-primary">
+          <button onClick={() => scrollToSection('rooms')} className="btn btn-primary" suppressHydrationWarning>
             Lihat Kamar
           </button>
-          <button onClick={() => scrollToSection('contact')} className="btn btn-secondary">
+          <button onClick={() => scrollToSection('contact')} className="btn btn-secondary" suppressHydrationWarning>
             Hubungi Kami
           </button>
         </div>

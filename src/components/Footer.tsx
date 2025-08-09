@@ -60,10 +60,10 @@ export default function Footer() {
           <div className="footer-section">
             <h4>Quick Links</h4>
             <ul>
-              <li><button onClick={() => scrollToSection('home')}>Beranda</button></li>
-              <li><button onClick={() => scrollToSection('about')}>Tentang</button></li>
-              <li><button onClick={() => scrollToSection('rooms')}>Kamar</button></li>
-              <li><button onClick={() => scrollToSection('facilities')}>Fasilitas</button></li>
+              <li><button onClick={() => scrollToSection('home')} suppressHydrationWarning>Beranda</button></li>
+              <li><button onClick={() => scrollToSection('about')} suppressHydrationWarning>Tentang</button></li>
+              <li><button onClick={() => scrollToSection('rooms')} suppressHydrationWarning>Kamar</button></li>
+              <li><button onClick={() => scrollToSection('facilities')} suppressHydrationWarning>Fasilitas</button></li>
             </ul>
           </div>
           <div className="footer-section">
@@ -78,15 +78,16 @@ export default function Footer() {
           <div className="footer-section">
             <h4>Newsletter</h4>
             <p>Dapatkan penawaran khusus dan update terbaru dari kami.</p>
-            <form className="newsletter" onSubmit={handleNewsletterSubmit}>
+            <form className="newsletter" onSubmit={handleNewsletterSubmit} suppressHydrationWarning>
               <input 
                 type="email" 
                 placeholder="Email Anda"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                suppressHydrationWarning
               />
-              <button type="submit">Subscribe</button>
+              <button type="submit" suppressHydrationWarning>Subscribe</button>
             </form>
           </div>
         </div>

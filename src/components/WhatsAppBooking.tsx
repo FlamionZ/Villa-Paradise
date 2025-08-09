@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 interface WhatsAppButtonProps {
   villaName?: string;
-  selectedDates?: string[];
   guestCount?: number;
 }
 
@@ -31,7 +30,7 @@ const villaData = {
   }
 };
 
-export default function WhatsAppBooking({ villaName = 'Villa Paradise', selectedDates = [], guestCount = 2 }: WhatsAppButtonProps) {
+export default function WhatsAppBooking({ villaName = 'Villa Paradise', guestCount = 2 }: WhatsAppButtonProps) {
   const [showModal, setShowModal] = useState(false);
   const [selectedVilla, setSelectedVilla] = useState(villaName);
   const [guests, setGuests] = useState(guestCount);
@@ -41,7 +40,6 @@ export default function WhatsAppBooking({ villaName = 'Villa Paradise', selected
 
   const generateWhatsAppMessage = () => {
     const villa = villaData[selectedVilla as keyof typeof villaData] || villaData['Villa Sunset Paradise'];
-    const dateRange = checkIn && checkOut ? `${checkIn} - ${checkOut}` : 'Tanggal akan ditentukan';
     
     const message = `🏖️ *VILLA PARADISE - BOOKING INQUIRY*
 
@@ -92,6 +90,7 @@ Terima kasih! 🙏`;
         className="whatsapp-float-btn"
         onClick={() => setShowModal(true)}
         title="Booking via WhatsApp"
+        suppressHydrationWarning
       >
         <i className="fab fa-whatsapp"></i>
         <span className="whatsapp-text">Book Now</span>
@@ -105,7 +104,7 @@ Terima kasih! 🙏`;
                 <i className="fab fa-whatsapp"></i>
                 Booking Villa Paradise
               </h3>
-              <button onClick={() => setShowModal(false)} className="close-btn">
+              <button onClick={() => setShowModal(false)} className="close-btn" suppressHydrationWarning>
                 <i className="fas fa-times"></i>
               </button>
             </div>
@@ -117,6 +116,7 @@ Terima kasih! 🙏`;
                   value={selectedVilla} 
                   onChange={(e) => setSelectedVilla(e.target.value)}
                   className="form-select"
+                  suppressHydrationWarning
                 >
                   {Object.keys(villaData).map(villa => (
                     <option key={villa} value={villa}>{villa}</option>
@@ -189,6 +189,7 @@ Terima kasih! 🙏`;
               <button 
                 onClick={handleWhatsAppClick}
                 className="whatsapp-send-btn"
+                suppressHydrationWarning
               >
                 <i className="fab fa-whatsapp"></i>
                 Kirim ke WhatsApp

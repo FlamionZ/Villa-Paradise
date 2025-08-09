@@ -1,5 +1,18 @@
 import type { Metadata } from "next";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-playfair',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
   title: "Villa Paradise - Penginapan Mewah yang Tak Terlupakan",
@@ -14,10 +27,9 @@ export default function RootLayout({
   return (
     <html lang="id">
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
       </head>
-      <body>
+      <body className={`${playfair.variable} ${inter.variable}`}>
         {children}
       </body>
     </html>

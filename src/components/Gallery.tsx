@@ -128,6 +128,7 @@ export default function Gallery() {
               <button 
                 onClick={closeLightbox}
                 className="lightbox-close"
+                suppressHydrationWarning
                 style={{
                   position: 'absolute',
                   top: '-40px',

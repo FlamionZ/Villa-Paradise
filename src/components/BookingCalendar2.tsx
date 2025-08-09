@@ -18,12 +18,6 @@ interface CalendarProps {
 export default function BookingCalendar({ selectedVilla, onDateSelect, selectedCheckIn, selectedCheckOut }: CalendarProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [bookedDates, setBookedDates] = useState<BookingDate[]>([]);
-  const [isClient, setIsClient] = useState(false);
-
-  // Pastikan component hanya render di client untuk menghindari hydration mismatch
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   // Simulasi data booking yang sudah ada
   useEffect(() => {
@@ -140,29 +134,6 @@ export default function BookingCalendar({ selectedVilla, onDateSelect, selectedC
     }
   };
 
-  // Jika belum di client, tampilkan loading atau placeholder
-  if (!isClient) {
-    return (
-      <section id="booking" className="booking-section">
-        <div className="container">
-          <div className="section-header text-center">
-            <span className="section-subtitle">Reservasi</span>
-            <h2 className="section-title">Pilih Tanggal Menginap</h2>
-            <p className="section-description">
-              Cek ketersediaan villa dan pilih tanggal check-in & check-out yang diinginkan
-            </p>
-          </div>
-          
-          <div className="booking-calendar">
-            <div style={{ textAlign: 'center', padding: '40px' }}>
-              Loading kalender...
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
     <section id="booking" className="booking-section">
       <div className="container">
@@ -174,18 +145,17 @@ export default function BookingCalendar({ selectedVilla, onDateSelect, selectedC
           </p>
         </div>
         
-        <div className="booking-calendar" suppressHydrationWarning>
+        <div className="booking-calendar">
           <div className="calendar-header">
             <button 
               onClick={prevMonth}
               className="calendar-nav"
               disabled={currentDate.getMonth() === new Date().getMonth() && currentDate.getFullYear() === new Date().getFullYear()}
-              suppressHydrationWarning
             >
               <i className="fas fa-chevron-left"></i>
             </button>
             <h3>{monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}</h3>
-            <button onClick={nextMonth} className="calendar-nav" suppressHydrationWarning>
+            <button onClick={nextMonth} className="calendar-nav">
               <i className="fas fa-chevron-right"></i>
             </button>
           </div>
@@ -196,7 +166,7 @@ export default function BookingCalendar({ selectedVilla, onDateSelect, selectedC
             ))}
           </div>
           
-          <div className="calendar-grid" suppressHydrationWarning>
+          <div className="calendar-grid">
             {renderCalendar()}
           </div>
           

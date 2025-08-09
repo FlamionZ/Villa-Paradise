@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,32 +38,32 @@ export default function Navbar() {
         </div>
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <li className="nav-item">
-            <button onClick={() => scrollToSection('home')} className="nav-link">
+            <button onClick={() => scrollToSection('home')} className="nav-link" suppressHydrationWarning>
               Beranda
             </button>
           </li>
           <li className="nav-item">
-            <button onClick={() => scrollToSection('about')} className="nav-link">
+            <button onClick={() => scrollToSection('about')} className="nav-link" suppressHydrationWarning>
               Tentang
             </button>
           </li>
           <li className="nav-item">
-            <button onClick={() => scrollToSection('rooms')} className="nav-link">
+            <button onClick={() => scrollToSection('rooms')} className="nav-link" suppressHydrationWarning>
               Kamar
             </button>
           </li>
           <li className="nav-item">
-            <button onClick={() => scrollToSection('facilities')} className="nav-link">
+            <button onClick={() => scrollToSection('facilities')} className="nav-link" suppressHydrationWarning>
               Fasilitas
             </button>
           </li>
           <li className="nav-item">
-            <button onClick={() => scrollToSection('gallery')} className="nav-link">
+            <button onClick={() => scrollToSection('gallery')} className="nav-link" suppressHydrationWarning>
               Galeri
             </button>
           </li>
           <li className="nav-item">
-            <button onClick={() => scrollToSection('contact')} className="nav-link">
+            <button onClick={() => scrollToSection('contact')} className="nav-link" suppressHydrationWarning>
               Kontak
             </button>
           </li>

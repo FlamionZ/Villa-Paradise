@@ -51,7 +51,7 @@ export default function Testimonials() {
                   <i className="fas fa-star"></i>
                   <i className="fas fa-star"></i>
                 </div>
-                <p>"{testimonial.content}"</p>
+                <p>&ldquo;{testimonial.content}&rdquo;</p>
               </div>
               <div className="testimonial-author">
                 <Image 

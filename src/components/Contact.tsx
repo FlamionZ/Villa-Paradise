@@ -105,7 +105,7 @@ export default function Contact() {
             </div>
           </div>
           <div className="contact-form">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} suppressHydrationWarning>
               <div className="form-group">
                 <input 
                   type="text" 
@@ -113,7 +113,8 @@ export default function Contact() {
                   placeholder="Nama Lengkap" 
                   value={formData.name}
                   onChange={handleInputChange}
-                  required 
+                  required
+                  suppressHydrationWarning
                 />
               </div>
               <div className="form-group">
@@ -123,7 +124,8 @@ export default function Contact() {
                   placeholder="Email" 
                   value={formData.email}
                   onChange={handleInputChange}
-                  required 
+                  required
+                  suppressHydrationWarning
                 />
               </div>
               <div className="form-group">
@@ -133,7 +135,8 @@ export default function Contact() {
                   placeholder="Nomor Telepon" 
                   value={formData.phone}
                   onChange={handleInputChange}
-                  required 
+                  required
+                  suppressHydrationWarning
                 />
               </div>
               <div className="form-group">
@@ -142,6 +145,7 @@ export default function Contact() {
                   value={formData.roomType}
                   onChange={handleInputChange}
                   required
+                  suppressHydrationWarning
                 >
                   <option value="">Pilih Jenis Kamar</option>
                   <option value="deluxe">Deluxe Villa</option>
@@ -157,7 +161,8 @@ export default function Contact() {
                     placeholder="Check-in" 
                     value={formData.checkin}
                     onChange={handleInputChange}
-                    required 
+                    required
+                    suppressHydrationWarning
                   />
                 </div>
                 <div className="form-group">
@@ -167,7 +172,8 @@ export default function Contact() {
                     placeholder="Check-out" 
                     value={formData.checkout}
                     onChange={handleInputChange}
-                    required 
+                    required
+                    suppressHydrationWarning
                   />
                 </div>
               </div>
@@ -177,9 +183,10 @@ export default function Contact() {
                   placeholder="Pesan Tambahan"
                   value={formData.message}
                   onChange={handleInputChange}
+                  suppressHydrationWarning
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-primary">Kirim Pesan</button>
+              <button type="submit" className="btn btn-primary" suppressHydrationWarning>Kirim Pesan</button>
             </form>
           </div>
         </div>

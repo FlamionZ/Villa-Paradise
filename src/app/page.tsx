@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -15,7 +15,7 @@ import PremiumFeatures from '@/components/PremiumFeatures';
 import WhatsAppBooking from '@/components/WhatsAppBooking';
 
 export default function Home() {
-  const [selectedVilla, setSelectedVilla] = useState('Villa Sunset Paradise');
+  const selectedVilla = 'Villa Sunset Paradise';
 
   const handleDateSelect = (date: string) => {
     console.log('Selected date:', date);

@@ -42,11 +42,12 @@ export default function About() {
     });
 
     return () => {
-      statRefs.current.forEach(ref => {
+      const currentRefs = statRefs.current;
+      currentRefs.forEach(ref => {
         if (ref) statsObserver.unobserve(ref);
       });
     };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <section id="about" className="about">
