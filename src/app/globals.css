@@ -1042,6 +1042,9 @@ section {
     border-color: transparent;
     position: relative;
     box-shadow: 0 3px 10px rgba(255, 107, 107, 0.3);
+    text-decoration: line-through;
+    text-decoration-color: #dc3545;
+    text-decoration-thickness: 2px;
 }
 
 .calendar-day.booked::after {
@@ -1052,6 +1055,18 @@ section {
     font-size: 0.7rem;
     opacity: 0.9;
     font-weight: bold;
+}
+
+.calendar-day.booked::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    right: 15%;
+    height: 2px;
+    background: #dc3545;
+    transform: translateY(-50%);
+    z-index: 1;
 }
 
 .calendar-day.selected {
