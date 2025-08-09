@@ -10,16 +10,10 @@ import Gallery from '@/components/Gallery';
 import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import BookingCalendar from '@/components/BookingCalendar';
 import PremiumFeatures from '@/components/PremiumFeatures';
 import WhatsAppBooking from '@/components/WhatsAppBooking';
 
 export default function Home() {
-  const selectedVilla = 'Villa Sunset Paradise';
-
-  const handleDateSelect = (date: string) => {
-    console.log('Selected date:', date);
-  };
   useEffect(() => {
     // Intersection Observer for animations
     const observerOptions = {
@@ -74,12 +68,6 @@ export default function Home() {
       <Hero />
       <About />
       <Rooms />
-      <BookingCalendar 
-        selectedVilla={selectedVilla}
-        onDateSelect={handleDateSelect}
-        selectedCheckIn=""
-        selectedCheckOut=""
-      />
       <PremiumFeatures />
       <Facilities />
       <Gallery />

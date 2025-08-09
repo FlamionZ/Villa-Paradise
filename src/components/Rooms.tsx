@@ -1,6 +1,8 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
+import BookingCalendar from './BookingCalendar';
 
 const rooms = [
   {
@@ -42,6 +44,16 @@ const rooms = [
 ];
 
 export default function Rooms() {
+  const [selectedRoom, setSelectedRoom] = useState<number | null>(null);
+  const [selectedDates, setSelectedDates] = useState<{checkIn: string, checkOut: string}>({checkIn: '', checkOut: ''});
+
+  const handleDateSelect = (date: string) => {
+    console.log('Selected date:', date);
+  };
+
+  const toggleRoomDetail = (roomId: number) => {
+    setSelectedRoom(selectedRoom === roomId ? null : roomId);
+  };
   return (
     <section id="rooms" className="rooms">
       <div className="container">
@@ -72,8 +84,27 @@ export default function Rooms() {
                     </span>
                   ))}
                 </div>
-                <button className="btn btn-outline">Lihat Detail</button>
+                <button 
+                  className="btn btn-outline"
+                  onClick={() => toggleRoomDetail(room.id)}
+                  suppressHydrationWarning
+                >
+                  {selectedRoom === room.id ? 'Tutup Detail' : 'Lihat Detail'}
+                </button>
               </div>
+              {selectedRoom === room.id && (
+                <div className="room-detail">
+                  <div className="room-detail-content">
+                    <h4>Pilih Tanggal Booking</h4>
+                    <BookingCalendar 
+                      selectedVilla={room.title}
+                      onDateSelect={handleDateSelect}
+                      selectedCheckIn={selectedDates.checkIn}
+                      selectedCheckOut={selectedDates.checkOut}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>

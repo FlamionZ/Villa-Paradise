@@ -31,52 +31,65 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="nav-container">
-        <div className="nav-logo">
-          <h2>Villa Paradise</h2>
+    <>
+      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="nav-container">
+          <div className="nav-logo">
+            <h2>Villa Paradise</h2>
+          </div>
+          <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+            <li className="nav-item">
+              <button onClick={() => scrollToSection('home')} className="nav-link" suppressHydrationWarning>
+                Beranda
+              </button>
+            </li>
+            <li className="nav-item">
+              <button onClick={() => scrollToSection('about')} className="nav-link" suppressHydrationWarning>
+                Tentang
+              </button>
+            </li>
+            <li className="nav-item">
+              <button onClick={() => scrollToSection('rooms')} className="nav-link" suppressHydrationWarning>
+                Kamar
+              </button>
+            </li>
+            <li className="nav-item">
+              <button onClick={() => scrollToSection('facilities')} className="nav-link" suppressHydrationWarning>
+                Fasilitas
+              </button>
+            </li>
+            <li className="nav-item">
+              <button onClick={() => scrollToSection('gallery')} className="nav-link" suppressHydrationWarning>
+                Galeri
+              </button>
+            </li>
+            <li className="nav-item">
+              <button onClick={() => scrollToSection('contact')} className="nav-link" suppressHydrationWarning>
+                Kontak
+              </button>
+            </li>
+          </ul>
+          <div 
+            className={`nav-toggle ${isMenuOpen ? 'active' : ''}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </div>
         </div>
-        <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-          <li className="nav-item">
-            <button onClick={() => scrollToSection('home')} className="nav-link" suppressHydrationWarning>
-              Beranda
-            </button>
-          </li>
-          <li className="nav-item">
-            <button onClick={() => scrollToSection('about')} className="nav-link" suppressHydrationWarning>
-              Tentang
-            </button>
-          </li>
-          <li className="nav-item">
-            <button onClick={() => scrollToSection('rooms')} className="nav-link" suppressHydrationWarning>
-              Kamar
-            </button>
-          </li>
-          <li className="nav-item">
-            <button onClick={() => scrollToSection('facilities')} className="nav-link" suppressHydrationWarning>
-              Fasilitas
-            </button>
-          </li>
-          <li className="nav-item">
-            <button onClick={() => scrollToSection('gallery')} className="nav-link" suppressHydrationWarning>
-              Galeri
-            </button>
-          </li>
-          <li className="nav-item">
-            <button onClick={() => scrollToSection('contact')} className="nav-link" suppressHydrationWarning>
-              Kontak
-            </button>
-          </li>
-        </ul>
-        <div 
-          className={`nav-toggle ${isMenuOpen ? 'active' : ''}`}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+      </nav>
+      
+      {/* Mobile Sticky Booking Button */}
+      <div className="mobile-booking-sticky">
+        <button 
+          className="mobile-booking-btn"
+          onClick={() => scrollToSection('rooms')}
+          suppressHydrationWarning
         >
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </div>
+          <i className="fas fa-calendar-alt"></i> Book Now
+        </button>
       </div>
-    </nav>
+    </>
   );
 }
