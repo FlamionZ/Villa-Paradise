@@ -1,0 +1,83 @@
+'use client';
+
+import Image from 'next/image';
+
+const rooms = [
+  {
+    id: 1,
+    title: "Deluxe Villa",
+    price: "$299/malam",
+    description: "Villa mewah dengan pemandangan taman tropis dan kolam renang pribadi.",
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    amenities: [
+      { icon: "fas fa-bed", text: "2 Kamar Tidur" },
+      { icon: "fas fa-bath", text: "2 Kamar Mandi" },
+      { icon: "fas fa-swimming-pool", text: "Private Pool" }
+    ]
+  },
+  {
+    id: 2,
+    title: "Ocean View Villa",
+    price: "$459/malam",
+    description: "Villa premium dengan pemandangan laut yang menakjubkan dan akses pantai pribadi.",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    amenities: [
+      { icon: "fas fa-bed", text: "3 Kamar Tidur" },
+      { icon: "fas fa-bath", text: "3 Kamar Mandi" },
+      { icon: "fas fa-water", text: "Beach Access" }
+    ]
+  },
+  {
+    id: 3,
+    title: "Presidential Suite",
+    price: "$799/malam",
+    description: "Suite mewah terluas dengan semua fasilitas premium dan butler pribadi.",
+    image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    amenities: [
+      { icon: "fas fa-bed", text: "4 Kamar Tidur" },
+      { icon: "fas fa-bath", text: "4 Kamar Mandi" },
+      { icon: "fas fa-user-tie", text: "Private Butler" }
+    ]
+  }
+];
+
+export default function Rooms() {
+  return (
+    <section id="rooms" className="rooms">
+      <div className="container">
+        <div className="section-header text-center">
+          <span className="section-subtitle">Kamar & Suite</span>
+          <h2 className="section-title">Pilihan Akomodasi Eksklusif</h2>
+          <p className="section-description">Setiap kamar dirancang dengan perhatian detail untuk memberikan kenyamanan maksimal</p>
+        </div>
+        <div className="rooms-grid">
+          {rooms.map((room) => (
+            <div key={room.id} className="room-card">
+              <div className="room-image">
+                <Image 
+                  src={room.image} 
+                  alt={room.title}
+                  width={800}
+                  height={250}
+                />
+                <div className="room-price">{room.price}</div>
+              </div>
+              <div className="room-content">
+                <h3 className="room-title">{room.title}</h3>
+                <p className="room-description">{room.description}</p>
+                <div className="room-amenities">
+                  {room.amenities.map((amenity, index) => (
+                    <span key={index}>
+                      <i className={amenity.icon}></i> {amenity.text}
+                    </span>
+                  ))}
+                </div>
+                <button className="btn btn-outline">Lihat Detail</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
