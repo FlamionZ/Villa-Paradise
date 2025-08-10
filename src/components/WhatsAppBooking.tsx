@@ -30,7 +30,7 @@ const villaData = {
   }
 };
 
-export default function WhatsAppBooking({ villaName = 'Villa Paradise', guestCount = 2 }: WhatsAppButtonProps) {
+export default function WhatsAppBooking({ villaName = 'Dieng Villa Luxury', guestCount = 2 }: WhatsAppButtonProps) {
   const [showModal, setShowModal] = useState(false);
   const [selectedVilla, setSelectedVilla] = useState(villaName);
   const [guests, setGuests] = useState(guestCount);
@@ -40,9 +40,9 @@ export default function WhatsAppBooking({ villaName = 'Villa Paradise', guestCou
 
   const generateWhatsAppMessage = () => {
     const villa = villaData[selectedVilla as keyof typeof villaData] || villaData['Villa Sunset Paradise'];
-    
-    const message = `🏖️ *VILLA PARADISE - BOOKING INQUIRY*
 
+    const message = `🏖️ *DIENG VILLA LUXURY - BOOKING INQUIRY*
+    
 📍 Villa: *${selectedVilla}*
 💰 Tarif: *${villa.price}/malam*
 ✨ Fitur: ${villa.features}
@@ -102,7 +102,7 @@ Terima kasih! 🙏`;
             <div className="whatsapp-modal-header">
               <h3>
                 <i className="fab fa-whatsapp"></i>
-                Booking Villa Paradise
+                Booking Dieng Villa Luxury
               </h3>
               <button onClick={() => setShowModal(false)} className="close-btn" suppressHydrationWarning>
                 <i className="fas fa-times"></i>

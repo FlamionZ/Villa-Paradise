@@ -48,8 +48,8 @@ export default function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>Villa Paradise</h3>
-            <p>Pengalaman villa mewah yang tak terlupakan di jantung Bali. Nikmati kemewahan dan kenyamanan di destinasi impian Anda.</p>
+            <h3>Dieng Villa Luxury</h3>
+            <p>Pengalaman villa mewah yang tak terlupakan di Dieng. Nikmati kemewahan dan kenyamanan di destinasi impian Anda.</p>
             <div className="social-links">
               <a href="#"><i className="fab fa-facebook"></i></a>
               <a href="#"><i className="fab fa-instagram"></i></a>
@@ -92,7 +92,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2025 Villa Paradise. All rights reserved.</p>
+          <p>&copy; 2025 Dieng Villa Luxury. All rights reserved.</p>
           <div className="footer-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>

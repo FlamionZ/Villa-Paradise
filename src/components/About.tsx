@@ -47,7 +47,7 @@ export default function About() {
         if (ref) statsObserver.unobserve(ref);
       });
     };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <section id="about" className="about">
@@ -56,7 +56,7 @@ export default function About() {
           <div className="about-image">
             <Image 
               src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-              alt="Villa Paradise"
+              alt="Dieng Villa Luxury"
               width={1000}
               height={500}
             />
@@ -74,10 +74,10 @@ export default function About() {
           <div className="about-content">
             <div className="section-header">
               <span className="section-subtitle">Tentang Kami</span>
-              <h2 className="section-title">Villa Paradise: Surga Tersembunyi di Bali</h2>
+              <h2 className="section-title">Dieng Villa Luxury: Surga Tersembunyi di Dieng</h2>
             </div>
             <p className="about-description">
-              Villa Paradise adalah destinasi mewah yang terletak di jantung Bali, menawarkan pengalaman menginap yang tak terlupakan. Dengan arsitektur modern yang memadukan sentuhan tradisional Bali, kami memberikan kenyamanan terbaik untuk liburan Anda.
+              Dieng Villa Luxury adalah destinasi mewah yang terletak di jantung Dieng, menawarkan pengalaman menginap yang tak terlupakan. Dengan arsitektur modern yang memadukan sentuhan tradisional Jawa, kami memberikan kenyamanan terbaik untuk liburan Anda.
             </p>
             <div className="about-features">
               <div className="feature">

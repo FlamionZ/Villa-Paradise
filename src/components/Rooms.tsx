@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import BookingCalendar from './BookingCalendar';
 
@@ -8,6 +9,7 @@ const rooms = [
   {
     id: 1,
     title: "Deluxe Villa",
+    slug: "deluxe-villa",
     price: "$299/malam",
     description: "Villa mewah dengan pemandangan taman tropis dan kolam renang pribadi.",
     image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -20,6 +22,7 @@ const rooms = [
   {
     id: 2,
     title: "Ocean View Villa",
+    slug: "ocean-view-villa",
     price: "$459/malam",
     description: "Villa premium dengan pemandangan laut yang menakjubkan dan akses pantai pribadi.",
     image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -32,6 +35,7 @@ const rooms = [
   {
     id: 3,
     title: "Presidential Suite",
+    slug: "presidential-suite",
     price: "$799/malam",
     description: "Suite mewah terluas dengan semua fasilitas premium dan butler pribadi.",
     image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
@@ -45,7 +49,7 @@ const rooms = [
 
 export default function Rooms() {
   const [selectedRoom, setSelectedRoom] = useState<number | null>(null);
-  const [selectedDates, setSelectedDates] = useState<{checkIn: string, checkOut: string}>({checkIn: '', checkOut: ''});
+  const [selectedDates] = useState<{checkIn: string, checkOut: string}>({checkIn: '', checkOut: ''});
 
   const handleDateSelect = (date: string) => {
     console.log('Selected date:', date);
@@ -84,13 +88,21 @@ export default function Rooms() {
                     </span>
                   ))}
                 </div>
-                <button 
-                  className="btn btn-outline"
-                  onClick={() => toggleRoomDetail(room.id)}
-                  suppressHydrationWarning
-                >
-                  {selectedRoom === room.id ? 'Tutup Detail' : 'Lihat Detail'}
-                </button>
+                <div className="room-buttons">
+                  <Link 
+                    href={`/villa/${room.slug}`}
+                    className="btn btn-primary"
+                  >
+                    Lihat Detail
+                  </Link>
+                  <button 
+                    className="btn btn-outline"
+                    onClick={() => toggleRoomDetail(room.id)}
+                    suppressHydrationWarning
+                  >
+                    {selectedRoom === room.id ? 'Tutup Kalender' : 'Cek Ketersediaan'}
+                  </button>
+                </div>
               </div>
               {selectedRoom === room.id && (
                 <div className="room-detail">

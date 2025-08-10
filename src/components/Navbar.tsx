@@ -35,7 +35,8 @@ export default function Navbar() {
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           <div className="nav-logo">
-            <h2>Villa Paradise</h2>
+            {/* Updated name to Dieng Villa Luxury */}
+            <h2>Dieng Villa Luxury</h2>
           </div>
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
             <li className="nav-item">

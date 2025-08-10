@@ -9,8 +9,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Villa Paradise - Penginapan Mewah yang Tak Terlupakan",
-  description: "Nikmati kemewahan dan kenyamanan di villa eksklusif kami dengan pemandangan yang menakjubkan di Bali",
+  title: "Dieng Villa Luxury - Penginapan Mewah yang Tak Terlupakan",
+  description: "Nikmati pengalaman menginap yang mewah dan tak terlupakan di Dieng Villa Luxury. Villa eksklusif dengan fasilitas terbaik.",
 };
 
 export default function RootLayout({

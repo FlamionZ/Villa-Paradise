@@ -10,7 +10,6 @@ import Gallery from '@/components/Gallery';
 import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import PremiumFeatures from '@/components/PremiumFeatures';
 import WhatsAppBooking from '@/components/WhatsAppBooking';
 
 export default function Home() {
@@ -68,7 +67,6 @@ export default function Home() {
       <Hero />
       <About />
       <Rooms />
-      <PremiumFeatures />
       <Facilities />
       <Gallery />
       <Testimonials />
