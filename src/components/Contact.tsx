@@ -81,7 +81,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4>Alamat</h4>
-                  <p>Jl. Pantai Indah No. 123<br/>Seminyak, Bali 80361</p>
+                  <p>Jl. Gunung Indah No. 123<br/>Dieng, Wonosobo 80361</p>
                 </div>
               </div>
               <div className="contact-item">
@@ -99,7 +99,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4>Email</h4>
-                  <p>info@villaparadise.com<br/>reservation@villaparadise.com</p>
+                  <p>info@villaluxury.com<br/>reservation@villaluxury.com</p>
                 </div>
               </div>
             </div>
